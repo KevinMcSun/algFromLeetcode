@@ -26,13 +26,13 @@ public class RotateArray {
         }
     }
 
-    public static void printArray(int[] nums){
-        for(int n : nums)
+    public static void printArray(int[] nums) {
+        for (int n : nums)
             System.out.print(n + " ");
     }
 
     public static void main(String[] args) {
-        int[] nums = {1,2,3,4,5,6,7,8,9,10,11,12,13};
+        int[] nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
         rotate(nums, 355);
         printArray(nums);
     }

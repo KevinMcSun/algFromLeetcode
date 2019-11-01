@@ -14,8 +14,7 @@ public class PlusOne {
             if (val < 10) {
                 digits[i] = val;
                 break;
-            }
-            else {
+            } else {
                 digits[i] = val - 10;
                 if (i == 0) {
                     int[] r = new int[digits.length + 1];
@@ -31,7 +30,7 @@ public class PlusOne {
     }
 
     public static void main(String[] args) {
-        int[] digits = {0, 0, 9,9,9,9,9};
+        int[] digits = {0, 0, 9, 9, 9, 9, 9};
         System.out.println(Arrays.toString(digits));
         System.out.println(Arrays.toString(plusOne(digits)));
     }

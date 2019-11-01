@@ -11,18 +11,24 @@ public class RemoveDuplicatesFromSortedListII {
         ListNode p = head;
         ListNode q = head.next;
 
-        ListNode r = null;
+        ListNode r = new ListNode(-1);
+        r.next = head;
+        ListNode res = r;
 
-        while (p.next != null) {
-            if (p.val == p.next.val) {
-                while (p.val == p.next.val)
-                    p.next = p.next.next;
+        while (p != null && q != null) {
+            if (p.val == q.val) {
+                r.next = q.next;
+                p = r.next;
+                if (p != null)
+                    q = p.next;
             } else {
                 p = p.next;
+                q = q.next;
+                r = r.next;
             }
         }
 
-        return r;
+        return res.next;
     }
 
     public static void printList(ListNode list) {
@@ -36,12 +42,13 @@ public class RemoveDuplicatesFromSortedListII {
 
     public static void main(String[] args) {
         ListNode node1 = new ListNode(1);
-        node1.next = new ListNode(2);
-        node1.next.next = new ListNode(2);
+        node1.next = new ListNode(1);
+        node1.next.next = new ListNode(1);
         node1.next.next.next = new ListNode(2);
         node1.next.next.next.next = new ListNode(2);
         node1.next.next.next.next.next = new ListNode(2);
-        node1.next.next.next.next.next.next = new ListNode(3);
+        node1.next.next.next.next.next.next = new ListNode(2);
+        node1.next.next.next.next.next.next.next = new ListNode(3);
 
         printList(deleteDuplicates(node1));
     }
